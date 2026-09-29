@@ -1,0 +1,205 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-09-29T05:04:41.700Z",
+  "totalBytes": 15136143,
+  "assets": [
+    {
+      "id": "forest-breeze",
+      "type": "audio",
+      "path": "assets/audio/forest-breeze.mp3",
+      "bytes": 1200588,
+      "sha256": "4af76f4b5bb5b40e75cdf20fa62d3cd44a68f2c6d9fd3d149c964a505600c39b",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-forest-breeze"
+    },
+    {
+      "id": "night-train",
+      "type": "audio",
+      "path": "assets/audio/night-train.mp3",
+      "bytes": 1200588,
+      "sha256": "c2f91d4011d6e4bb6f443a81831c54cd85cbd11ec0a4e11b7710204abe728185",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-night-train"
+    },
+    {
+      "id": "rain-soft",
+      "type": "audio",
+      "path": "assets/audio/rain-soft.mp3",
+      "bytes": 1200588,
+      "sha256": "8862c4a12ee83907cf0a0343cc81e54e5c5b5406e59843ddfe7a5c1c9904bf3e",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-rain-soft"
+    },
+    {
+      "id": "slow-waves",
+      "type": "audio",
+      "path": "assets/audio/slow-waves.mp3",
+      "bytes": 1200588,
+      "sha256": "4c2ab2114de9ac7526803e76b409d5132a551de86905b6d4bc4ae8f28fad6e55",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-slow-waves"
+    },
+    {
+      "id": "small-stream",
+      "type": "audio",
+      "path": "assets/audio/small-stream.mp3",
+      "bytes": 1200588,
+      "sha256": "0cb1b82b27d73cbdd92667f3d7aff93cfdb955d9ad662d6d8b6d7e9dabf17bb7",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-small-stream"
+    },
+    {
+      "id": "warm-fireplace",
+      "type": "audio",
+      "path": "assets/audio/warm-fireplace.mp3",
+      "bytes": 1200588,
+      "sha256": "b40260d0a6134dca3a675025fffe19c12bad8e0a6bbd5c0b0c1d1fb7cf4120a0",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-warm-fireplace"
+    },
+    {
+      "id": "coast",
+      "type": "image",
+      "path": "assets/images/coast.webp",
+      "bytes": 162498,
+      "sha256": "24d6e021740357c4a09c7f1901734ebe9fe3c0f9dda3410fe0a5e488fb6cdfbd",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-coast"
+    },
+    {
+      "id": "fireplace",
+      "type": "image",
+      "path": "assets/images/fireplace.webp",
+      "bytes": 133956,
+      "sha256": "958747b23ee1a257f7bc0e39631cd15ee065db7514cfda7d0e58345e8f4ddaea",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-fireplace"
+    },
+    {
+      "id": "forest",
+      "type": "image",
+      "path": "assets/images/forest.webp",
+      "bytes": 146520,
+      "sha256": "3db8fc81dec110ce058fc4b7c61e8972693b55999038db38f7e5f3e3e374c288",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-forest"
+    },
+    {
+      "id": "night-train",
+      "type": "image",
+      "path": "assets/images/night-train.webp",
+      "bytes": 70380,
+      "sha256": "80941c98944d8b353b6c53f72484599dfd0e72115e1f770bb262c478d5ba9e97",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-night-train"
+    },
+    {
+      "id": "rain-window",
+      "type": "image",
+      "path": "assets/images/rain-window.webp",
+      "bytes": 156096,
+      "sha256": "4dcac0e649eaea47c9af7c3850435e4c78c2eb785931ff87c56f9d0fd1bde79d",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-rain-window"
+    },
+    {
+      "id": "stream",
+      "type": "image",
+      "path": "assets/images/stream.webp",
+      "bytes": 196238,
+      "sha256": "c61692d40a30c77c8b27cd35dc22b3cd22e088c8f1ed71ebe9f8155507b29144",
+      "fallbackImageId": null,
+      "licenseRecordId": "generated-stream"
+    },
+    {
+      "id": "coast-mp4",
+      "type": "video",
+      "path": "assets/video/coast.mp4",
+      "bytes": 996172,
+      "sha256": "3fca90803904e5783beb6d52407ff31bc425cffa4b9a70377d774e0009451c87",
+      "fallbackImageId": "coast",
+      "licenseRecordId": "generated-coast"
+    },
+    {
+      "id": "coast-webm",
+      "type": "video",
+      "path": "assets/video/coast.webm",
+      "bytes": 388456,
+      "sha256": "2cd116c9e73d766bf208021db6084a1c436dc4490c3516d8f4fc874c67bf8562",
+      "fallbackImageId": "coast",
+      "licenseRecordId": "generated-coast"
+    },
+    {
+      "id": "forest-mp4",
+      "type": "video",
+      "path": "assets/video/forest.mp4",
+      "bytes": 844444,
+      "sha256": "b564b625081132d4a42c4a0d2ab7b77b1befa3d760bc860d8e6664a5f1164a45",
+      "fallbackImageId": "forest",
+      "licenseRecordId": "generated-forest"
+    },
+    {
+      "id": "forest-webm",
+      "type": "video",
+      "path": "assets/video/forest.webm",
+      "bytes": 313442,
+      "sha256": "ada19047f6123ce733051cf3975dda6127622398ca9408ddb7e1e4a579058802",
+      "fallbackImageId": "forest",
+      "licenseRecordId": "generated-forest"
+    },
+    {
+      "id": "night-train-mp4",
+      "type": "video",
+      "path": "assets/video/night-train.mp4",
+      "bytes": 423818,
+      "sha256": "cbcf944c194c43ffe1766279af2a65f845e7aa9c6cd833e36920c32eb36008ad",
+      "fallbackImageId": "night-train",
+      "licenseRecordId": "generated-night-train"
+    },
+    {
+      "id": "night-train-webm",
+      "type": "video",
+      "path": "assets/video/night-train.webm",
+      "bytes": 139891,
+      "sha256": "1a4fd5dddca4117f5e5ba339c28f5125c23fe6772e6551b7bd30b4606d612248",
+      "fallbackImageId": "night-train",
+      "licenseRecordId": "generated-night-train"
+    },
+    {
+      "id": "rain-window-mp4",
+      "type": "video",
+      "path": "assets/video/rain-window.mp4",
+      "bytes": 2053273,
+      "sha256": "2f37c0d6ac9f3bfba43b2497fbe292bb4a5dda53edf6b3d85d7953d565662d3c",
+      "fallbackImageId": "rain-window",
+      "licenseRecordId": "generated-rain-window"
+    },
+    {
+      "id": "rain-window-webm",
+      "type": "video",
+      "path": "assets/video/rain-window.webm",
+      "bytes": 333254,
+      "sha256": "29da4deaf3908939445bc69e310c6f891f322f7838421ce4def68fc6f1ca4b34",
+      "fallbackImageId": "rain-window",
+      "licenseRecordId": "generated-rain-window"
+    },
+    {
+      "id": "stream-mp4",
+      "type": "video",
+      "path": "assets/video/stream.mp4",
+      "bytes": 1125863,
+      "sha256": "4b6e6fb7fded20af0afa377e9005780a0d65e64689a4294470c2cba55bf17f13",
+      "fallbackImageId": "stream",
+      "licenseRecordId": "generated-stream"
+    },
+    {
+      "id": "stream-webm",
+      "type": "video",
+      "path": "assets/video/stream.webm",
+      "bytes": 448314,
+      "sha256": "c309c5a707cba7cc05415adad47358081b88fb1f34282ec834b30a346e739e8b",
+      "fallbackImageId": "stream",
+      "licenseRecordId": "generated-stream"
+    }
+  ]
+}

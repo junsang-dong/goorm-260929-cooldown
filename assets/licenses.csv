@@ -1,0 +1,18 @@
+id,type,creator,source_url,license_url,downloaded_at,permitted_use,notes,file_sha256
+generated-rain-window,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-forest,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-coast,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-night-train,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-stream,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-fireplace,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-rain-soft,audio,Cooldown Studio procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-forest-breeze,audio,Cooldown Studio procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-slow-waves,audio,Cooldown Studio procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-night-train,audio,Cooldown Studio procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-small-stream,audio,Cooldown Studio procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-warm-fireplace,audio,Cooldown Studio procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-rain-window,video,Cooldown Studio generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-forest,video,Cooldown Studio generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-coast,video,Cooldown Studio generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-night-train,video,Cooldown Studio generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-stream,video,Cooldown Studio generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
