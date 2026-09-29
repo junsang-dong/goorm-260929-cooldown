@@ -1,0 +1,18 @@
+id,type,creator,source_url,license_url,downloaded_at,permitted_use,notes,file_sha256
+generated-rain-window,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-forest,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-coast,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-night-train,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-stream,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-fireplace,image,OpenAI image generation,,,2026-09-29,Project use,Original generated artwork; no extracted third-party asset,see manifest.json
+generated-rain-soft,audio,Pausecape procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-forest-breeze,audio,Pausecape procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-slow-waves,audio,Pausecape procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-night-train,audio,Pausecape procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-small-stream,audio,Pausecape procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-warm-fireplace,audio,Pausecape procedural generator,,,2026-09-29,Project use,Original synthetic ambient texture,see manifest.json
+generated-rain-window,video,Pausecape generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-forest,video,Pausecape generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-coast,video,Pausecape generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-night-train,video,Pausecape generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json
+generated-stream,video,Pausecape generated loop,,,2026-09-29,Project use,Loop derived from generated project artwork,see manifest.json

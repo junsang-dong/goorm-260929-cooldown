@@ -1,0 +1,6 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import path from 'node:path';
+const appRoot=path.resolve('app');
+const videoBases=new Set(['rain-window','forest','coast','night-train','stream']);
+const groups=[['audio',path.join(appRoot,'assets/audio'),['.mp3']],['image',path.join(appRoot,'assets/images'),['.webp']],['video',path.join(appRoot,'assets/video'),['.mp4','.webm']]];const assets=[];
+for(const [type,dir,exts] of groups){for(const name of fs.readdirSync(dir).filter(x=>exts.some(ext=>x.endsWith(ext))).sort()){const ext=exts.find(x=>name.endsWith(x)),file=path.join(dir,name),data=fs.readFileSync(file),base=name.slice(0,-ext.length);if(type==='video'&&!videoBases.has(base))continue;const id=type==='video'?`${base}-${ext.slice(1)}`:base;assets.push({id,type,path:path.relative(appRoot,file).split(path.sep).join('/'),bytes:data.length,sha256:crypto.createHash('sha256').update(data).digest('hex'),fallbackImageId:type==='video'?base:null,licenseRecordId:`generated-${base}`})}}
+const manifest={version:'1.0.0',generatedAt:new Date().toISOString(),totalBytes:assets.reduce((n,a)=>n+a.bytes,0),assets};fs.writeFileSync(path.join(appRoot,'assets/manifest.json'),JSON.stringify(manifest,null,2)+'\n');console.log(`${assets.length} assets · ${(manifest.totalBytes/1024/1024).toFixed(1)} MB`);

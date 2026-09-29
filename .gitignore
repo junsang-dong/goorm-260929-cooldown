@@ -1,4 +1,4 @@
 .DS_Store
 *.wav
 node_modules/
-assets/video/*-[0-9]*.mp4
+app/assets/video/*-[0-9]*.mp4

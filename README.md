@@ -1,14 +1,47 @@
 <p align="center">
-  <img src="docs/screenshots/home-mobile.jpg" alt="쿨다운 스튜디오 홈 화면" width="31%">
+  <img src="docs/screenshots/home-mobile.jpg" alt="Pausecape 홈 화면" width="31%">
   <img src="docs/screenshots/session-mobile.jpg" alt="5분 휴식 세션 화면" width="31%">
   <img src="docs/screenshots/offline-mobile.jpg" alt="오프라인 팩 준비 완료 화면" width="31%">
 </p>
 
-# 쿨다운 스튜디오
+# 포즈스케이프 (Pausecape)
 
 강의·업무가 끝난 뒤 5–20분 동안 좋아하는 풍경과 자연음을 조합하고, 호흡을 가다듬으며 쉬는 모바일 우선 오프라인 PWA입니다. 별도의 계정이나 서버 없이 브라우저 안에서 동작하며, 미리 콘텐츠 팩을 준비하면 인터넷이 없는 환경에서도 사용할 수 있습니다.
 
 ## 이번 작업의 주요 내용
+
+### 제품 소개 페이지
+
+- 루트 `index.html`을 포즈스케이프 제품 소개용 싱글 페이지로 개편
+- 제품의 핵심 가치, 주요 기능, 스튜디오 사용 흐름, 오프라인 지원 내용을 한 페이지에 구성
+- **5분 휴식 시작**, **앱 열기**, **나만의 휴식 만들기** CTA를 실제 앱의 `/app/index.html`과 연결
+- 기존 앱의 녹색·라임 색상과 자연 풍경을 활용해 브랜드 경험을 일관되게 유지
+- 모바일·태블릿·데스크톱에 대응하는 반응형 레이아웃과 스크롤 등장 효과 적용
+- 키보드 탐색, 건너뛰기 링크, 명확한 포커스, 모션 줄이기 설정 지원
+
+### 프로젝트 구조 분리
+
+- 제품 소개 페이지는 저장소 루트에서 제공하고 기존 PWA는 `app/` 폴더로 이동
+- 앱의 HTML, CSS, JavaScript, Service Worker, 웹 매니페스트, 미디어 자산을 `app/` 아래에 통합
+- 자산 생성 및 검증 스크립트도 `app/scripts/`로 이동하고 NPM 명령 경로 갱신
+- 루트와 앱의 역할을 분리해 소개 페이지와 실제 제품 화면을 독립적으로 관리할 수 있도록 정리
+
+```text
+.
+├── index.html                 # 포즈스케이프 제품 소개 페이지
+├── app/
+│   ├── index.html             # 실제 휴식 앱
+│   ├── app.js
+│   ├── style.css
+│   ├── service-worker.js
+│   ├── manifest.webmanifest
+│   ├── assets/                # 이미지, 오디오, 영상, 오프라인 manifest
+│   └── scripts/               # 자산 생성 및 검증 도구
+├── docs/screenshots/          # README 대표 화면
+└── package.json
+```
+
+## 앱의 핵심 기능
 
 ### 휴식 시작 흐름
 
@@ -43,6 +76,22 @@
 
 ## 주요 오류 수정
 
+### 앱 실행 버튼에서 디렉터리 목록이 표시되는 문제
+
+소개 페이지의 CTA가 `app/` 디렉터리 자체를 가리켜, 디렉터리 인덱스 자동 해석을 지원하지 않는 미리보기 환경에서는 앱 대신 파일 목록이 표시되었습니다. 모든 앱 실행 CTA가 `./app/index.html`을 직접 가리키도록 수정해 로컬 미리보기와 일반 HTTP 서버 모두에서 앱 문서가 즉시 열리도록 했습니다.
+
+### 앱 이동 후 자산 경로가 끊기는 문제
+
+기존 앱을 `app/` 폴더로 옮기면서 루트 기준으로 작성된 자산 생성·검증 스크립트가 이전 `assets/` 경로를 참조할 수 있었습니다. 스크립트의 실제 파일 경로는 `app/assets/`를 사용하도록 수정하되, 브라우저에서 사용하는 오프라인 manifest 내부 경로는 앱 기준의 `assets/...` 형태를 유지했습니다.
+
+이에 따라 `npm run assets:audio`, `npm run assets:video`, `npm run assets:manifest`, `npm run check`가 새 디렉터리 구조에서도 동일하게 동작합니다.
+
+### 이전 Service Worker가 소개 페이지를 가리는 문제
+
+구조 변경 전에 루트 범위로 등록된 Service Worker가 기존 앱 셸을 계속 제공하면 새 제품 소개 페이지 대신 오래된 앱 화면이 나타날 수 있었습니다. 소개 페이지에서 이전 루트 등록과 구형 셸 캐시를 정리하고, 새 Service Worker는 `/app/` 범위의 `pausecape-app-shell-v2` 캐시를 사용하도록 분리했습니다.
+
+사용자가 내려받은 오프라인 콘텐츠 팩은 삭제하지 않아 기존 준비 상태를 이어서 사용할 수 있습니다.
+
 ### 영상이 일부 브라우저에서 재생되지 않던 문제
 
 H.264 지원 여부가 브라우저 환경마다 달라 세션 영상이 정지 이미지로만 표시될 수 있었습니다. H.264 MP4와 VP9 WebM을 함께 제공하고, 브라우저가 재생 가능한 형식을 선택하도록 수정했습니다.
@@ -70,7 +119,12 @@ npm install
 npm run serve
 ```
 
-브라우저에서 `http://localhost:4173`을 열고 **오프라인 → 오프라인 팩 준비**를 누릅니다. `오프라인 준비 완료`가 표시되면 개발자 도구에서 네트워크를 Offline으로 전환한 뒤 페이지를 다시 열어 확인할 수 있습니다.
+브라우저에서 `http://localhost:4173`을 열면 제품 소개 페이지가 표시됩니다. **5분 휴식 시작**을 누르거나 `http://localhost:4173/app/`으로 이동한 뒤, 앱의 **오프라인 → 오프라인 팩 준비**를 누릅니다. `오프라인 준비 완료`가 표시되면 개발자 도구에서 네트워크를 Offline으로 전환한 뒤 앱 페이지를 다시 열어 확인할 수 있습니다.
+
+| 화면 | 주소 |
+| --- | --- |
+| 제품 소개 페이지 | `http://localhost:4173/` |
+| 포즈스케이프 앱 | `http://localhost:4173/app/` |
 
 다른 포트를 사용하려면 다음처럼 실행할 수 있습니다.
 
@@ -87,10 +141,10 @@ npm run assets:manifest
 npm run check
 ```
 
-- `assets/licenses.csv`: 이미지·오디오·영상의 제작 및 이용 기록
-- `assets/manifest.json`: 실제 파일 크기와 SHA-256을 포함한 오프라인 팩 목록
-- `scripts/generate-ambience.mjs`: 자연음 MP3 생성
-- `scripts/encode-videos.mjs`: MP4·WebM 루프 영상 생성
-- `scripts/build-asset-manifest.mjs`: 오프라인 팩 manifest 갱신
+- `app/assets/licenses.csv`: 이미지·오디오·영상의 제작 및 이용 기록
+- `app/assets/manifest.json`: 실제 파일 크기와 SHA-256을 포함한 오프라인 팩 목록
+- `app/scripts/generate-ambience.mjs`: 자연음 MP3 생성
+- `app/scripts/encode-videos.mjs`: MP4·WebM 루프 영상 생성
+- `app/scripts/build-asset-manifest.mjs`: 오프라인 팩 manifest 갱신
 
-운영 자산을 교체하면 `assets/licenses.csv`를 갱신한 뒤 `npm run assets:manifest`와 `npm run check`를 실행하세요.
+운영 자산을 교체하면 `app/assets/licenses.csv`를 갱신한 뒤 `npm run assets:manifest`와 `npm run check`를 실행하세요.

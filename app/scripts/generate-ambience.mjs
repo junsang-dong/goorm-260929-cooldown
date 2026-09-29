@@ -12,7 +12,7 @@ const profiles={
   'small-stream':{color:.82,rumble:.02,sparkle:.34,waves:.08},
   'warm-fireplace':{color:.9,rumble:.035,sparkle:.18,waves:.04}
 };
-fs.mkdirSync('assets/audio',{recursive:true});
+fs.mkdirSync('app/assets/audio',{recursive:true});
 let seed=260929;const random=()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return((seed>>>0)/4294967296)*2-1};
 for(const [name,p] of Object.entries(profiles)){
   const samples=new Float32Array(count);let low=0,slow=0;
@@ -29,5 +29,5 @@ for(const [name,p] of Object.entries(profiles)){
   const encoder=new lamejs.Mp3Encoder(1,rate,160),chunks=[];
   for(let i=0;i<count;i+=1152){const part=encoder.encodeBuffer(pcm.subarray(i,Math.min(i+1152,count)));if(part.length)chunks.push(Buffer.from(part))}
   const tail=encoder.flush();if(tail.length)chunks.push(Buffer.from(tail));
-  const out=`assets/audio/${name}.mp3`;fs.writeFileSync(out,Buffer.concat(chunks));console.log(out);
+  const out=`app/assets/audio/${name}.mp3`;fs.writeFileSync(out,Buffer.concat(chunks));console.log(out);
 }
